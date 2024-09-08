@@ -1,37 +1,29 @@
-// Função de pesquisa
+//função de pesquisa
 function pesquisar() {
-    // Obtém a seção HTML onde os resultados serão exibidos
-    let section = document.getElementById("resultados-pesquisa");
-
-    // Obtém o valor digitado pelo usuário
+    const section = document.getElementById("resultados-pesquisa");
     let campoPesquisa = document.getElementById("campo-pesquisa").value;
 
-    // Se campoPesquisa for uma string vazia
+    //se campoPesquisa for uma string vazia
     if (!campoPesquisa) {
-        section.innerHTML = "<p>Nada foi encontrado. <br> Você precisa digitar o nome de um local que quer <br> visitar ou algo que quer fazer, como 'museu' ou 'esporte' ;)</p>";
+        section.innerHTML = "<p class='mensagem-nada-encontrado'>Nada foi encontrado. <br> Você precisa digitar o nome de um local que quer <br> visitar ou algo que quer fazer, como 'museu' ou 'esporte' ;)</p>";
         return;
     }
 
     campoPesquisa = campoPesquisa.toLowerCase();
-
-    // Inicializa uma string vazia para armazenar os resultados
     let resultados = "";
 
-    // Itera sobre cada dado da lista de dados
+    //itera sobre cada dado da lista de dados
     for (let dado of dados) {
-        let nome = dado.nome.toLowerCase();
-        let descricao = dado.descricao.toLowerCase();
-        let categoria = dado.categoria.toLowerCase();
-        let tags = dado.tags ? dado.tags.map(tag => tag.toLowerCase()) : []; // Converte cada tag para minúsculas
+        const nome = dado.nome.toLowerCase();
+        const descricao = dado.descricao.toLowerCase();
+        const categoria = dado.categoria.toLowerCase();
+        const tags = dado.tags ? dado.tags.map(tag => tag.toLowerCase()) : [];
 
-        // Verifica se o nome, descrição, categoria ou alguma tag corresponde à pesquisa
+        //verifica se algum campo corresponde à pesquisa
         if (nome.includes(campoPesquisa) || descricao.includes(campoPesquisa) || categoria.includes(campoPesquisa) || tags.some(tag => tag.includes(campoPesquisa))) {
-            // Gera os resultados
             resultados += `
             <div class="item-resultado">
-                <h2>
-                    <a href="${dado.link}" target="_blank">${dado.nome}</a>
-                </h2>
+                <h2><a href="${dado.link}" target="_blank">${dado.nome}</a></h2>
                 <p class="descricao-meta">${dado.descricao}</p>
                 <a href="${dado.link}" target="_blank">Mais informações</a>
             </div>
@@ -39,41 +31,35 @@ function pesquisar() {
         }
     }
 
-    // Caso não haja resultados, exibe mensagem
+    //caso não haja resultados, exibe mensagem
     if (!resultados) {
         resultados = "<p class='mensagem-nada-encontrado'>Nada foi encontrado. ;( <br> Ainda estamos aprimorando a base de dados!</p>";
     }    
 
-    // Atribui os resultados gerados à seção HTML
     section.innerHTML = resultados;
 }
 
-// Função para verificar o scroll
+//função para verificar o scroll
 function checkScroll() {
     const apresentacao = document.querySelector('.apresentacao');
     const campoPesquisa = document.querySelector('.campo-pesquisa');
     const triggerPoint = window.innerHeight * 0.7;
-
     const apresentacaoBottom = apresentacao.getBoundingClientRect().bottom;
 
+    //adiciona ou remove classes de acordo com scroll
     if (apresentacaoBottom < triggerPoint) {
         apresentacao.classList.add('fade-out');
-    } else {
-        apresentacao.classList.remove('fade-out');
-    }
-
-    if (apresentacaoBottom < triggerPoint) {
         campoPesquisa.classList.add('visible');
     } else {
+        apresentacao.classList.remove('fade-out');
         campoPesquisa.classList.remove('visible');
     }
 }
 
 window.addEventListener('scroll', checkScroll);
-
 checkScroll();
 
-// Apresentação e carrossel
+//apresentação e carrossel
 const carrosselInner = document.querySelector('.carrossel-inner');
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
@@ -87,19 +73,11 @@ function updateCarrossel() {
 
 next.addEventListener('click', () => {
     const maxIndex = carrosselInner.children.length - 1;
-    if (currentIndex < maxIndex) {
-        currentIndex++;
-    } else {
-        currentIndex = 0;
-    }
+    currentIndex = (currentIndex < maxIndex) ? currentIndex + 1 : 0;
     updateCarrossel();
 });
 
 prev.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-    } else {
-        currentIndex = carrosselInner.children.length - 1;
-    }
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : carrosselInner.children.length - 1;
     updateCarrossel();
 });

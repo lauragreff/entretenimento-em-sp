@@ -1,53 +1,51 @@
-/* Inclua o link para as fontes no HTML (adicionando na seção <head>) */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Georgia:wght@400&display=swap');
 
-/* Corpo da página */
 body {
-    font-family: 'Georgia', serif; /* Fonte sóbria para o texto geral */
-    background-color: #A9A9A9; /* Cinza neutro */
+    font-family: 'Georgia', serif;
+    background-color: #A9A9A9;
     margin: 0;
     padding-bottom: 100px;
     position: relative;
 }
 
-/* Cabeçalho fixo no topo */
+/*cabeçalho fixo no topo */
 .cabecalho {
-    font-family: 'Cinzel', serif; /* Fonte dramática para o cabeçalho */
+    font-family: 'Cinzel', serif;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #263135; /* Tom escuro e sofisticado */
-    color: #F6DFBD; /* Beige para contraste claro */
+    background-color: #263135;
+    color: #F6DFBD;
     padding: 10px;
     text-align: left;
     z-index: 1000;
 }
 
-/* Seção de apresentação ocupa 100% da altura da tela */
+/*seção de apresentação ocupa 100% da altura da tela */
 .apresentacao {
-    height: 100vh; /* Ocupa 100% da altura da tela */
+    height: 100vh;
     display: flex;
-    align-items: center; /* Alinha verticalmente no centro */
+    align-items: center;
     padding: 0 20px;
     box-sizing: border-box;
 }
 
 .apresentacao h2 {
-    font-family: 'Cinzel', serif; /* Fonte dramática para os títulos na apresentação */
-    color: #263135; /* Tom escuro e sofisticado */
+    font-family: 'Cinzel', serif;
+    color: #263135;
     font-size: 2.5em;
     margin-bottom: 20px;
 }
 
 .apresentacao p {
-    font-family: 'Georgia', serif; /* Fonte sóbria para o texto na apresentação */
+    font-family: 'Georgia', serif;
     font-size: 1.2em;
     max-width: 800px;
-    color: #415b69; /* Azul acinzentado */
+    color: #415b69;
 }
 
-/* Campo de pesquisa - Começa escondido */
+/*campo de pesquisa - começa escondido */
 .campo-pesquisa {
     opacity: 0;
     transform: translateY(50px);
@@ -61,18 +59,17 @@ body {
     transform: translateY(0);
 }
 
-/* Desaparece suavemente quando rolar */
+/*desaparece suavemente quando rolar */
 .apresentacao.fade-out {
     opacity: 0;
     transform: translateY(-50px);
 }
 
-/* Rodapé */
 footer {
-    font-family: 'Georgia', serif; /* Fonte sóbria para o rodapé */
-    background-color: #263135; /* Tom escuro e sofisticado */
+    font-family: 'Georgia', serif;
+    background-color: #263135;
     text-align: center;
-    color: #F6DFBD; /* Beige para contraste claro */
+    color: #F6DFBD;
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
@@ -83,40 +80,38 @@ footer {
     box-sizing: border-box;
 }
 
-/* Links */
+/*links */
 a {
     margin: 0 5px;
-    color: #89bc23; /* Verde para contraste */
+    color: #89bc23;
     text-decoration: none;
 }
 
-/* Campo de entrada */
+/*campo de entrada */
 input {
-    font-family: 'Georgia', serif; /* Fonte sóbria para o campo de entrada */
-    background-color: #55788B; /* Azul acinzentado */
-    color: #F6DFBD; /* Texto em beige */
+    font-family: 'Georgia', serif;
+    background-color: #55788B;
+    color: #F6DFBD;
     border-radius: 0.5rem;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #263135; /* Borda escura para contraste */
+    border: 1px solid #263135;
 }
 
 input::placeholder {
-    color: #F6DFBD; /* Texto do placeholder em beige */
+    color: #F6DFBD;
 }
 
-/* Botões */
 button {
-    font-family: 'Georgia', serif; /* Fonte sóbria para o botão */
-    background-color: #89bc23; /* Verde */
-    color: #263135; /* Texto escuro */
+    font-family: 'Georgia', serif;
+    background-color: #89bc23;
+    color: #263135;
     border-radius: 0.4rem;
-    border: none; /* Remover borda padrão */
-    padding: 10px 20px; /* Ajustar o padding conforme necessário */
+    border: none;
+    padding: 10px 20px;
     cursor: pointer;
 }
 
-/* Resultados da pesquisa */
 .resultados-pesquisa {
     width: 60rem;
     height: 65vh;
@@ -124,12 +119,12 @@ button {
     padding: 1rem;
     border-radius: 0.6rem;
     margin: 0 auto;
-    display: block; /* Remove o flex */
+    display: block;
 }
 
 .item-resultado {
-    background: #191970; /* Azul escuro */
-    color: #F6DFBD; /* Beige claro */
+    background: #191970;
+    color: #F6DFBD;
     text-align: left;
     border-radius: 0.6rem;
     padding: 1rem;
@@ -139,30 +134,28 @@ button {
     box-sizing: border-box;
 }
 
-/* Mensagem de resultado não encontrado */
 .mensagem-nada-encontrado {
-    font-family: 'Georgia', serif; /* Fonte sóbria para o texto */
-    color: #191970; /* Cor vermelha para destacar a mensagem */
-    text-align: center; /* Centralizar o texto */
-    font-size: 1.2em; /* Tamanho da fonte */
-    border: 2px solid #191970; /* Borda vermelha para destacar */
-    border-radius: 0.5rem; /* Bordas arredondadas */
-    margin: 20px auto; /* Margem superior e inferior, e centralizar horizontalmente */
-    max-width: 60%; /* Limitar a largura para telas pequenas */
+    font-family: 'Georgia', serif;
+    color: #191970;
+    text-align: center;
+    font-size: 1.2em;
+    border: 2px solid #191970;
+    border-radius: 0.5rem;
+    margin: 20px auto;
+    max-width: 60%; /*limitar a largura para telas pequenas */
 }
 
-
-/* Apresentação e Carrossel */
+/*apresentação e carrossel */
 .conteudo {
     display: flex;
-    justify-content: space-between; /* Espaça os itens */
-    align-items: center; /* Alinha verticalmente no centro */
+    justify-content: space-between; /*espaça os itens */
+    align-items: center; /*alinha verticalmente no centro */
     width: 100%;
 }
 
 .texto {
     flex: 1;
-    margin-right: 20px; /* Espaço entre o texto e o carrossel */
+    margin-right: 20px; /*espaço entre o texto e o carrossel */
 }
 
 .carrossel {
@@ -179,7 +172,7 @@ button {
 
 .item {
     flex: 0 0 auto;
-    width: 300px; /* Ajuste a largura conforme necessário */
+    width: 300px; /*ajuste a largura conforme necessário */
     margin-right: 10px;
 }
 
@@ -229,17 +222,17 @@ button {
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 1.8rem; /* Tamanho da fonte em telas pequenas */
-        letter-spacing: 0.1rem; /* Espaçamento entre letras em telas pequenas */
+        font-size: 1.8rem;
+        letter-spacing: 0.1rem;
     }
 
     section input {
-        width: 17rem; /* Largura total dos inputs em telas pequenas */
+        width: 17rem;
     }
 
     section button {
-        padding: 0.6rem 1rem; /* Espaçamento interno do botão em telas pequenas */
-        font-size: 0.9rem; /* Tamanho da fonte do botão em telas pequenas */
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
     }
 
     .resultados-pesquisa {
@@ -248,10 +241,10 @@ button {
     }
 
     .item-resultado h2 {
-        font-size: 1.1rem; /* Tamanho da fonte dos títulos em telas pequenas */
+        font-size: 1.1rem;
     }
 
     footer {
-        font-size: 0.9rem; /* Tamanho da fonte do rodapé em telas pequenas */
+        font-size: 0.9rem;
     }
 }
