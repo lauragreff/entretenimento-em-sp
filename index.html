@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entretenimento em SP</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Georgia:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cabecalho">
+        <h1>Entretenimento em SP</h1>
+    </div>
+    <div class="apresentacao">
+        <div class="conteudo">
+            <div class="texto">
+                <h2>Explorando São Paulo</h2>
+                <p>São Paulo é uma cidade grande, e andar nela em busca de lazer pode ser difícil até para quem mora na metrópole. Ficamos perdidos entre tantas coisas que a cidade tem a oferecer. Mas imagina ter acesso a um site com reviews de várias opções para vários estilos? Aqui, você pode! É de graça!</p>
+            </div>
+            <div class="carrossel">
+                <div class="carrossel-inner">
+                    <div class="item"><img src="imagens/masp.jpg" alt="MASP"></div>
+                    <div class="item"><img src="imagens/mube.jpeg" alt="MuBE"></div>
+                    <div class="item"><img src="imagens/ibira.jpeg" alt="Parque Ibirapuera"></div>
+                    <div class="item"><img src="imagens/kinoplex.jpeg" alt="Cinema Kinoplex"></div>
+                    <div class="item"><img src="imagens/liberdade.jpeg" alt="Bairro Liberdade, SP"></div>
+                    <div class="item"><img src="imagens/arena.jpg" alt="Neo Química Arena"></div>
+                    <div class="item"><img src="imagens/higienopolis.jpg" alt="Shopping Pátio Higienópolis"></div>
+                    <div class="item"><img src="imagens/autodromo.jpg" alt="Autódromo de Interlagos"></div>
+                </div>
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="campo-pesquisa hidden">
+        <section>
+            <input id="campo-pesquisa" type="search" autocomplete="on" placeholder="Onde você quer ir hoje?">
+            <button onclick="pesquisar()">Pesquisar</button>
+        </section>
+        <section class="resultados-pesquisa" id="resultados-pesquisa"></section>
+    </div>
+    <footer>
+    <div data>
+        <p>Entretenimento em SP, 2024</p>
+        <p>Inspirado por Alura e Google Gemini</p>
+    </div>
+    <div class="contato">
+        <p>Conheça a desenvolvedora: Laura V Greff</p>
+        <a target="_blank" href="https://github.com/lauragreff">GitHub</a> <a target="_blank" href="https://www.linkedin.com/in/laura-greff-719629296/">LinkedIn</a>
+    </div>
+    </footer>
+    <script src="dados.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
